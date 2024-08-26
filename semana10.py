@@ -1,8 +1,7 @@
 import os
 
-
 class Producto:
-    def _init_(self, id_producto, nombre, cantidad, precio):
+    def init(self, id_producto, nombre, cantidad, precio):
         # Atributos del producto
         self._id_producto = id_producto  # ID único del producto
         self._nombre = nombre  # Nombre del producto
@@ -41,7 +40,7 @@ class Producto:
 
 
 class Inventario:
-    def _init_(self, archivo='inventario.txt'):
+    def init(self, archivo='inventario.txt'):
         self.productos = []  # Lista para almacenar los productos
         self.archivo = archivo  # Nombre del archivo donde se almacenará el inventario
         self.cargar_inventario()  # Cargar los productos desde el archivo al iniciar
@@ -177,5 +176,5 @@ def menu():
             print("Opción no válida. Intente de nuevo.")  # Mensaje de error para opción no válida
 
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     menu()  # Ejecutar el menú al iniciar el programa
